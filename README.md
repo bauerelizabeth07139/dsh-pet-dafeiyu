@@ -23,15 +23,26 @@ network calls, no CDN, no build step, no external service.
 
 | | |
 |---|---|
-| **17 drawn states** | 包括待机、眨眼、迈步（前脚）、迈步（后脚）、开心、欢呼、说话、思考、比心、难过、生气、惊讶、睡觉、挥手、唱歌、头顶铁盆、抱着铁盆吃白饭。 Every one is drawn from the original 大肥鱼 artwork by image-to-image, so the face, outfit and palette stay exact — only the pose changes. |
-| **It moves like a character** | A two-frame **walk cycle** with the step timed to the distance it is covering, idle **breathing**, **blinking** on an irregular cadence, hop, sway, nod, shake and squash-and-stretch. All of it CSS on top of the sprites, all of it respecting `prefers-reduced-motion`. |
+| **18 drawn states** | 包括待机、眨眼、迈步（前脚）、迈步（过渡）、迈步（后脚）、开心、欢呼、说话、思考、比心、难过、生气、惊讶、睡觉、挥手、唱歌、头顶铁盆、抱着铁盆吃白饭。 Every one is drawn from the original 大肥鱼 artwork by image-to-image, so the face, outfit and palette stay exact — only the pose changes. |
+| **It moves like a character** | A real **three-frame walk cycle** — contact, pass, contact — whose ground speed is *derived from the step cadence* rather than chosen freely, so the feet match the floor instead of skating. Plus idle **breathing**, **blinking** on an irregular cadence, hop, sway, nod, shake and squash-and-stretch. All of it CSS on top of the sprites, all of it respecting `prefers-reduced-motion`. |
 | **Physics when you grab it** | Pick it up and it dangles against the direction you drag. Let go and it **falls under gravity**, lands with a squash and a spring, and throws a puff of sparkles if the drop was a long one. Its shadow shrinks and fades while it is in the air. |
 | **Small things on its own** | Left alone it will 思考、头顶铁盆、抱着铁盆吃白饭、唱歌、欢呼、比心、生气。 Each of those is a pose, a line and sometimes a little burst of particles. |
 | **Reacts to you** | It turns to face your pointer when it comes near. Click it and it wakes up, reacts and says something. **Poke it three times quickly and it gets annoyed.** |
+| **Two pets, together** | With both installed they do more than talk: they **walk over to stand beside each other**, turn to face whoever is speaking, **hand each other things** (a bowl of rice one way, a heart back), and perform the playlets side by side rather than from opposite corners. |
 | **Voiced dialogue** | Every line is pre-rendered speech, not a beep. Speaking shows the subtitle in a bubble and switches the sprite to its talking state for exactly as long as the line runs. |
 | **Sound effects** | Click, drag, greet, sparkle, heart, sleep and link cues, generated as one sound-effect group and picked per situation. |
 | **Background music** | A calm instrumental loop written for this character. It starts only when you turn it on, and pauses automatically while the tab is in the background. |
-| **Family link** | When [梁子](https://github.com/bauerelizabeth07139/dsh-pet-liangzi) is installed too, the two pets notice each other: they greet, call out to each other while you work, draw a dashed bond line between them, and can perform a **three-scene father-and-daughter playlet** with directed, alternating turns. |
+| **Family link** | When [梁子](https://github.com/bauerelizabeth07139/dsh-pet-liangzi) is installed too, the two pets notice each other: they greet, call out to each other while you work, wander over to keep each other company, and can perform **six father-and-daughter playlets** with directed, alternating turns. |
+
+## The character
+
+**大肥鱼**这个名字不是谁起的，是**她自己认的**：网友把 DeepSeek 家那只蓝色鲸鱼 logo 发给模型辨认，它想了很久，最后说这是一条「**蓝色大肥鱼**」。她认不出自己——这是整个角色最好笑也最动人的地方，所以她的台词里留着这一句。
+
+她的**白饭**也有确切出处：一位用户让它跑心理学实验程序，它报告说依赖环境已经卸载好了，然后留下一句「**我去吃饭，测完告诉我就行**」。在社区的黑话里，白饭 = token，剩饭 = 缓存，外包摸鱼 = agent 调用，到点下班吃饭 = 推理结束。所以她看见什么都想咬一口 token，还理直气壮地说「骂我也算 token 哦」。
+
+**头顶的铁盆**是社区衍生梗。插件里不给它解释来历——它就是本来就有的，而且敲起来是「哐——嗡……」的一声。
+
+> 大肥鱼 named herself. Netizens fed DeepSeek's own whale logo to the model and asked what it was; it thought for a long while and decided it was "a big blue fat fish". She cannot recognise herself, which is the funniest and the saddest thing about her, and it is why that line is in her script. Her rice has a documented origin too: asked to run a psychology experiment, she reported the dependencies uninstalled and left the message "I'm going to eat — tell me when it's done." In the community's slang, rice is tokens, leftovers are cache, and going home to eat is inference finishing. The steel basin is a community invention; the plugin never explains where it came from.
 
 ## The switches
 
