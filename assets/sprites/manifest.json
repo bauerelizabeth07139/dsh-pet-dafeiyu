@@ -1,5 +1,5 @@
 {
- "note": "Every pose is drawn in three-quarter view looking to the RIGHT. The renderer mirrors horizontally to face left.",
+ "note": "Facing is recorded per pose. 'right' means the artwork is drawn looking right and the renderer mirrors it to face left; 'left' means the artwork is already drawn looking left.",
  "defaultFacing": "right",
  "order": [
   "idle",
@@ -22,8 +22,8 @@
   "eat"
  ],
  "faces": {
-  "idle": "right",
-  "blink": "right",
+  "idle": "left",
+  "blink": "left",
   "walk1": "right",
   "walkpass": "right",
   "walk2": "right",
